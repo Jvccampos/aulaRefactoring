@@ -6,10 +6,10 @@ class TestCustomer {
 
 	@Test
 	void testStatement() {
-		Movie movie1 = new Movie("Singleton 2",100);
-		Movie movie2 = new Movie("Interestllar",200);
-		Movie movie3 = new Movie("O Joker, o coringa, o palhaço",300);
-		Movie movie4 = new Movie("Lagoa Azul",800);
+		Movie movie1 = new Movie("Singleton 2",2);
+		Movie movie2 = new Movie("Interestllar",1);
+		Movie movie3 = new Movie("O Joker, o coringa, o palhaço",2);
+		Movie movie4 = new Movie("Lagoa Azul",0);
 		
 		Rental rental1 = new Rental(movie1,2);
 ;		Rental rental2 = new Rental(movie2,6);
@@ -22,8 +22,7 @@ class TestCustomer {
 		customer.addRental(rental3);
 		customer.addRental(rental4);
 		
-		
-		assertEquals(customer.statement(),"Rental Record for Pedro\n\tSingleton 2\t0.0\n\tInterestllar\t0.0\n\tO Joker, o coringa, o palhaço\t0.0\n\tLagoa Azul\t0.0\nAmount owed is 0.0\nYou earned 4 frequent renter points");
+		assertEquals(customer.statement(),"Rental Record for Pedro\n\tSingleton 2\t1.5\n\tInterestllar\t18.0\n\tO Joker, o coringa, o palhaço\t1.5\n\tLagoa Azul\t2.0\nAmount owed is 23.0\nYou earned 5 frequent renter points");
 		
 	}
 
